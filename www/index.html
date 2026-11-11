@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>webserv</title>
+	<style>
+		body { font-family: system-ui, sans-serif; max-width: 640px; margin: 3rem auto; padding: 0 1rem; line-height: 1.5; }
+		code { background: #f2f2f2; padding: 0 .3em; border-radius: 3px; }
+		form { margin: 1rem 0; }
+	</style>
+</head>
+<body>
+	<h1>webserv is running</h1>
+	<p>A non-blocking HTTP/1.1 server with an nginx-like config.</p>
+	<ul>
+		<li><a href="/uploads/">Uploaded files</a> (autoindex)</li>
+		<li><a href="/cgi-bin/hello.py?name=visitor">CGI: hello.py</a></li>
+		<li><a href="/redirect">Redirect (301)</a></li>
+		<li><a href="/does-not-exist">Custom 404 page</a></li>
+	</ul>
+
+	<h2>Upload a file</h2>
+	<form action="/uploads" method="post" enctype="multipart/form-data">
+		<input type="file" name="file"> <button>Upload</button>
+	</form>
+
+	<h2>CGI form (POST)</h2>
+	<form action="/cgi-bin/form.py" method="post">
+		<input name="message" placeholder="Say something"> <button>Send</button>
+	</form>
+</body>
+</html>
